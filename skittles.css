@@ -1,0 +1,1264 @@
+/* Styles go here */
+ html
+,body 
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	font-size:13px;
+	font-family:helvetica, arial;
+}
+
+pre {
+	font-family: inherit !important;
+}
+
+form { overflow: auto; }
+
+a {
+	text-decoration: none;
+	border: 1px dotted rgba(255,255,255,0);
+}
+
+a:hover {
+	border-bottom-color: silver;
+}
+
+
+/*******************************************/
+/* header */
+/*******************************************/
+.tickets_area .header
+{
+	height: 60px;
+	vertical-align: middle;
+	position: relative;
+}
+
+.tickets_area .header #title
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: #FF6600;
+	text-align: center;
+	font-size: 28pt;
+	padding: 9px;
+}
+
+.tickets_area .header #search {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding: 6px;
+}
+
+.tickets_area .header #search input {
+	border: 1px solid #DFDFDF;
+	height: 28px;
+	text-align: right;
+	color: gray;
+	font-size: 10pt;
+	padding: 3px 10px;
+	margin: 3px;
+}
+
+
+
+/*******************************************/
+/* general */
+/*******************************************/
+.display-right {
+	text-align: right;
+}
+
+.display-left {
+	text-align: left;
+}
+
+/*******************************************/
+/* buttons */
+/*******************************************/
+.btn {
+	width: 100px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: lowercase;
+	margin: 3px;
+	border: 1px solid white !important;
+	height: 39px;
+	font-family: inherit;
+	color: white;
+}
+
+.btn:hover {
+	box-shadow: 0 0 3px gray inset;
+	border:0px
+}
+
+.btn.btn-info { background: DodgerBlue; }
+.btn.btn-warning { background: #FF6600; }
+.btn.btn-danger { background: #CC0000; }
+.btn.btn-success { background: #33AA00; }
+
+
+/*******************************************/
+/* Ticket Status Badges  */
+/*******************************************/
+#col_status {
+	font-size: 11px;
+	padding: 0px 4px;
+	border: 1px dotted gray;
+}
+
+ .status_acknowledged #col_status
+,.status_assigned #col_status
+,.status_closed #col_status
+,.status_development #col_status
+,.status_done #col_status
+,.status_duplicate #col_status
+,.status_fail #col_status
+,.status_ignore #col_status
+,.status_monitor #col_status
+,.status_new #col_status
+,.status_passed #col_status
+,.status_pending_closure #col_status
+,.status_pending_data #col_status
+,.status_pending_feedback #col_status
+,.status_pending_review #col_status
+,.status_reference #col_status
+,.status_research #col_status
+,.status_schedule_release #col_status
+,.status_test #col_status {
+  color: white;
+  border-color: white;
+}
+
+ .status_assigned #col_status
+,.status_acknowledged #col_status { background: orangeRed; }
+
+ .status_closed #col_status
+,.status_duplicate #col_status
+,.status_ignore #col_status
+,.status_monitor #col_status
+,.status_reference #col_status { background: gray; }
+
+.status_acknowledged #col_status     { background: orangeRed; }
+.status_development #col_status      { background: Crimson; }
+.status_done #col_status             { background: green; }
+.status_fail #col_status             { background: red; font-weight: bold; }
+.status_new #col_status              { background: orangeRed; }
+.status_pending_closure #col_status  { background: green; font-weight: bold; }
+.status_pending_data #col_status     { background: DeepSkyBlue; }
+.status_pending_feedback #col_status { background: RoyalBlue; }
+.status_passed #col_status           { background: #33AA00; }
+.status_pending_review #col_status   { background: blue; }
+.status_research #col_status         { background: Crimson; }
+.status_schedule_release #col_status { background: green; }
+.status_test #col_status             { background: purple; }
+
+
+
+
+/*************************************************/
+/* icons                                         */
+/*************************************************/
+/* from twitter bootstrap; URL: http://twitter.github.com/bootstrap/ */
+.icons {
+	background-image: url('http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/img/glyphicons-halflings.png');
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 14px;
+	line-height: 14px;
+	vertical-align: text-top;
+	width: 14px;
+	filter: alpha(opacity=30);
+	opacity: 0.5;
+}
+
+.selected .icons {
+	background-image: url('http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/img/glyphicons-halflings-white.png');
+}
+
+.icons.icon-glass {background-position: 0 0;}
+.icons.icon-music {background-position: -24px 0;}
+.icons.icon-search {background-position: -48px 0;}
+.icons.icon-envelope {background-position: -72px 0;}
+.icons.icon-heart {background-position: -96px 0;}
+.icons.icon-star {background-position: -120px 0;}
+.icons.icon-star-empty {background-position: -144px 0;}
+.icons.icon-user {background-position: -168px 0;}
+.icons.icon-film {background-position: -192px 0;}
+.icons.icon-th-large {background-position: -216px 0;}
+.icons.icon-th {background-position: -240px 0;}
+.icons.icon-th-list {background-position: -264px 0;}
+.icons.icon-ok {background-position: -288px 0;}
+.icons.icon-remove {background-position: -312px 0;}
+.icons.icon-zoom-in {background-position: -336px 0;}
+.icons.icon-zoom-out {background-position: -360px 0;}
+.icons.icon-off {background-position: -384px 0;}
+.icons.icon-signal {background-position: -408px 0;}
+.icons.icon-cog {background-position: -432px 0;}
+.icons.icon-trash {background-position: -456px 0;}
+.icons.icon-home {background-position: 0 -24px;}
+.icons.icon-file {background-position: -24px -24px;}
+.icons.icon-time {background-position: -48px -24px;}
+.icons.icon-road {background-position: -72px -24px;}
+.icons.icon-download-alt {background-position: -96px -24px;}
+.icons.icon-download {background-position: -120px -24px;}
+.icons.icon-upload {background-position: -144px -24px;}
+.icons.icon-inbox {background-position: -168px -24px;}
+.icons.icon-play-circle {background-position: -192px -24px;}
+.icons.icon-repeat {background-position: -216px -24px;}
+.icons.icon-refresh {background-position: -240px -24px;}
+.icons.icon-list-alt {background-position: -264px -24px;}
+.icons.icon-lock {background-position: -287px -24px;}
+.icons.icon-flag {background-position: -312px -24px;}
+.icons.icon-headphones {background-position: -336px -24px;}
+.icons.icon-volume-off {background-position: -360px -24px;}
+.icons.icon-volume-down {background-position: -384px -24px;}
+.icons.icon-volume-up {background-position: -408px -24px;}
+.icons.icon-qrcode {background-position: -432px -24px;}
+.icons.icon-barcode {background-position: -456px -24px;}
+.icons.icon-tag {background-position: 0 -48px;}
+.icons.icon-tags {background-position: -25px -48px;}
+.icons.icon-book {background-position: -48px -48px;}
+.icons.icon-bookmark {background-position: -72px -48px;}
+.icons.icon-print {background-position: -96px -48px;}
+.icons.icon-camera {background-position: -120px -48px;}
+.icons.icon-font {background-position: -144px -48px;}
+.icons.icon-bold {background-position: -167px -48px;}
+.icons.icon-italic {background-position: -192px -48px;}
+.icons.icon-text-height {background-position: -216px -48px;}
+.icons.icon-text-width {background-position: -240px -48px;}
+.icons.icon-align-left {background-position: -264px -48px;}
+.icons.icon-align-center {background-position: -288px -48px;}
+.icons.icon-align-right {background-position: -312px -48px;}
+.icons.icon-align-justify {background-position: -336px -48px;}
+.icons.icon-list {background-position: -360px -48px;}
+.icons.icon-indent-left {background-position: -384px -48px;}
+.icons.icon-indent-right {background-position: -408px -48px;}
+.icons.icon-facetime-video {background-position: -432px -48px;}
+.icons.icon-picture {background-position: -456px -48px;}
+.icons.icon-pencil {background-position: 0 -72px;}
+.icons.icon-map-marker {background-position: -24px -72px;}
+.icons.icon-adjust {background-position: -48px -72px;}
+.icons.icon-tint {background-position: -72px -72px;}
+.icons.icon-edit {background-position: -96px -72px;}
+.icons.icon-share {background-position: -120px -72px;}
+.icons.icon-check {background-position: -144px -72px;}
+.icons.icon-move {background-position: -168px -72px;}
+.icons.icon-step-backward {background-position: -192px -72px;}
+.icons.icon-fast-backward {background-position: -216px -72px;}
+.icons.icon-backward {background-position: -240px -72px;}
+.icons.icon-play {background-position: -264px -72px;}
+.icons.icon-pause {background-position: -288px -72px;}
+.icons.icon-stop {background-position: -312px -72px;}
+.icons.icon-forward {background-position: -336px -72px;}
+.icons.icon-fast-forward {background-position: -360px -72px;}
+.icons.icon-step-forward {background-position: -384px -72px;}
+.icons.icon-eject {background-position: -408px -72px;}
+.icons.icon-chevron-left {background-position: -432px -72px;}
+.icons.icon-chevron-right {background-position: -456px -72px;}
+.icons.icon-plus-sign {background-position: 0 -96px;}
+.icons.icon-minus-sign {background-position: -24px -96px;}
+.icons.icon-remove-sign {background-position: -48px -96px;}
+.icons.icon-ok-sign {background-position: -72px -96px;}
+.icons.icon-question-sign {background-position: -96px -96px;}
+.icons.icon-info-sign {background-position: -120px -96px;}
+.icons.icon-screenshot {background-position: -144px -96px;}
+.icons.icon-remove-circle {background-position: -168px -96px;}
+.icons.icon-ok-circle {background-position: -192px -96px;}
+.icons.icon-ban-circle {background-position: -216px -96px;}
+.icons.icon-arrow-left {background-position: -240px -96px;}
+.icons.icon-arrow-right {background-position: -264px -96px;}
+.icons.icon-arrow-up {background-position: -289px -96px;}
+.icons.icon-arrow-down {background-position: -312px -96px;}
+.icons.icon-share-alt {background-position: -336px -96px;}
+.icons.icon-resize-full {background-position: -360px -96px;}
+.icons.icon-resize-small {background-position: -384px -96px;}
+.icons.icon-plus {background-position: -408px -96px;}
+.icons.icon-minus {background-position: -433px -96px;}
+.icons.icon-asterisk {background-position: -456px -96px;}
+.icons.icon-exclamation-sign {background-position: 0 -120px;}
+.icons.icon-gift {background-position: -24px -120px;}
+.icons.icon-leaf {background-position: -48px -120px;}
+.icons.icon-fire {background-position: -72px -120px;}
+.icons.icon-eye-open {background-position: -96px -120px;}
+.icons.icon-eye-close {background-position: -120px -120px;}
+.icons.icon-warning-sign {background-position: -144px -120px;}
+.icons.icon-plane {background-position: -168px -120px;}
+.icons.icon-calendar {background-position: -192px -120px;}
+.icons.icon-random {background-position: -216px -120px;}
+.icons.icon-comment {background-position: -240px -120px;}
+.icons.icon-magnet {background-position: -264px -120px;}
+.icons.icon-chevron-up {background-position: -288px -120px;}
+.icons.icon-chevron-down {background-position: -313px -119px;}
+.icons.icon-retweet {background-position: -336px -120px;}
+.icons.icon-shopping-cart {background-position: -360px -120px;}
+.icons.icon-folder-close {background-position: -384px -120px;}
+.icons.icon-folder-open {background-position: -408px -120px;}
+.icons.icon-resize-vertical {background-position: -432px -119px;}
+.icons.icon-resize-horizontal {background-position: -456px -118px;}
+.icons.icon-hdd {background-position: 0 -144px;}
+.icons.icon-bullhorn {background-position: -24px -144px;}
+.icons.icon-bell {background-position: -48px -144px;}
+.icons.icon-certificate {background-position: -72px -144px;}
+.icons.icon-thumbs-up {background-position: -96px -144px;}
+.icons.icon-thumbs-down {background-position: -120px -144px;}
+.icons.icon-hand-right {background-position: -144px -144px;}
+.icons.icon-hand-left {background-position: -168px -144px;}
+.icons.icon-hand-up {background-position: -192px -144px;}
+.icons.icon-hand-down {background-position: -216px -144px;}
+.icons.icon-circle-arrow-right {background-position: -240px -144px;}
+.icons.icon-circle-arrow-left {background-position: -264px -144px;}
+.icons.icon-circle-arrow-up {background-position: -288px -144px;}
+.icons.icon-circle-arrow-down {background-position: -312px -144px;}
+.icons.icon-globe {background-position: -336px -144px;}
+.icons.icon-wrench {background-position: -360px -144px;}
+.icons.icon-tasks {background-position: -384px -144px;}
+.icons.icon-filter {background-position: -408px -144px;}
+.icons.icon-briefcase {background-position: -432px -144px;}
+.icons.icon-fullscreen {background-position: -456px -144px;}
+
+.icons.icon-caret {
+	background-image: none;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	border-top: 4px solid #000000;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: '';
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	top: 7px;
+	position: relative;
+}
+
+.error {
+	background: orangered;
+	border: none;
+	color: white;
+	font-weight: normal;
+	margin: 0;
+	overflow: hidden;
+	padding-top: 10px;
+	text-align: center;
+	width: 100%;
+}
+
+/*************************************************/
+/* ticket */
+/*************************************************/
+ .ticket #labels
+,.ticket #values
+{
+	border-bottom: 1px dotted #DDDD99;
+	vertical-align: top;
+}
+
+.ticket #labels
+{
+	font-weight: bold;
+	text-align: right;
+}
+
+.ticket .popup_info
+{
+	display: none;
+	position: absolute;
+	background: white;
+	padding: 10px;
+	border: 3px solid gray;
+}
+
+/*-----------------------------------------------*/
+/* info */
+/*-----------------------------------------------*/
+ .ticket .info
+,.ticket .info label
+{
+	color: gray !important;
+}
+
+ .ticket .info
+,.ticket .info label
+,.ticket .info select
+,.ticket .info input
+{
+	font-size: 11px;
+}
+
+ .ticket .info label
+,.ticket .info #value
+{
+	padding: 1px 2px;
+}
+
+.ticket .info #labels { width: 10%; }
+
+.ticket .info #values
+{
+	width: 23%;
+	color: black;
+}
+
+.ticket pre
+{
+	font-family: inherti;
+	font-size: inherit;
+	white-space: pre-wrap;
+}
+
+/*-----------------------------------------------*/
+/* info top */
+/*-----------------------------------------------*/
+.info_top
+{
+	background: #EFEFEF;
+	border-bottom: 1px solid #DEDEDE;
+	padding: 20px 0px 10px 0px;
+}
+
+
+/*-----------------------------------------------*/
+/* info top - follow */
+/*-----------------------------------------------*/
+.info_top .follow
+{
+	border: 1px dotted silver;
+	color: silver;
+	cursor: pointer;
+	padding: 0 10px;
+	text-align: center;
+	width: 53px;
+}
+
+.info_top .follow:hover {
+	background: silver;
+	color: white;
+}
+
+.info_top .follow#following
+{
+	background: gold;
+	border: 1px dotted orange;
+	color: white;
+	font-weight:bold;
+}
+
+.info_top .follow#pending { text-decoration: blink; }
+
+/*-----------------------------------------------*/
+/* info top - info rows*/
+/*-----------------------------------------------*/
+.info {
+	clear: both;
+	overflow: auto;
+}
+
+.info label
+{
+	display: block;
+	width: 100px;
+	font-size: 13px;
+	color: silver;
+	overflow: auto;
+	font-weight: normal !important;
+	text-transform: lowercase;
+}
+
+.info input, .info select
+{
+	background: none;
+	border: 0px;
+	border-bottom: 1px dotted #DEDEDE;
+	margin: 0px;
+	border: 0px;
+}
+
+.info #info_left { float: left; }
+.info #info_right
+{
+	float: right;
+	text-align: right;
+}
+
+ .info #info_right input
+,.info #info_right select { text-align: right; }
+
+.info #info_left label
+{
+	text-align: right;
+	padding-right: 10px;
+	float:left;
+}
+
+.info #info_left #value
+{
+	display: block;
+	float:left;
+}
+
+.info #info_right label
+{
+	text-align: left;
+	padding-left: 10px;
+	float:right;
+}
+
+.info #info_right #value
+{
+	display: block;
+	float:right;
+}
+
+ .info #info_left #value
+,.info #info_left #value input
+,.info #info_left #value select
+,.info #info_right #value
+,.info #info_right #value input
+,.info #info_right #value select
+{
+	color: #4F4F4F !important;
+}
+
+/*-----------------------------------------------*/
+/* data */
+/*-----------------------------------------------*/
+ .ticket .data
+,.actions .data
+{
+	padding: 5px 50px; 
+	clear: both;
+}
+
+.ticket .data textarea { 
+	width: calc(100% - 20px);
+	min-height: 150px;
+	padding: 10px;
+}
+.ticket .data { margin-bottom: 50px; }
+
+/*-----------------------------------------------*/
+/* data - bugnote */
+/*-----------------------------------------------*/
+.ticket .data .bugnote
+{
+	border-top: 1px dotted silver;
+	/*padding: 15px 15px;*/
+	padding: 15px 0px;
+	overflow: auto;
+}
+
+ .ticket .data .bugnote #date
+,.ticket .data .bugnote #user
+,.ticket .data .bugnote #date_update
+,.ticket .data .bugnote #hours
+,.ticket .data .bugnote #view
+{
+	color: silver;
+	display: block;
+}
+
+.ticket .data .bugnote #user
+{
+	font-weight: bold;
+	font-size: 11pt;
+}
+
+.ticket .data .bugnote #date_update { }
+
+.ticket .data .bugnote #date
+{
+	float:left;
+	margin-right: 10px;
+}
+
+.ticket .data .bugnote #view { }
+
+.ticket .data .bugnote pre
+{
+	margin: 0px;
+	padding:0px;
+	width: auto;
+	margin-top: 20px;
+}
+
+/*************************************************/
+/* tickets area                                  */
+/*************************************************/
+.tickets_area
+{
+	border-collapse: collapse;
+	border: 0px;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	z-index: 1000;
+	height: 100%;
+}
+
+.tickets_area td
+{
+	background: white;
+}
+
+.tickets_area #header
+{
+	background: #DFDFDF;
+	color: black;
+	font-size: 11px;
+	height: 27px;
+	overflow: hidden;
+}
+
+.tickets_area td
+{
+	vertical-align: top;
+	padding: 0px;
+	margin: 0px;
+	border: 1px dotted silver;
+}
+
+.tickets_area td#frame
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+  transition: 5s all ease;
+}
+
+.tickets_area td#frame .ticket{
+	overflow: auto;
+	height: calc(100% - 60px);
+}
+
+
+
+/*-----------------------------------------------*/
+/* column */ 
+/*-----------------------------------------------*/
+.tickets_area .column
+{
+	position: relative;
+	height: 100%;
+}
+
+.tickets_area .column { display:block; }
+
+
+/*-----------------------------------------------*/
+/* column content */ 
+/*-----------------------------------------------*/
+.tickets_area .column .content
+{
+	overflow-y: auto;
+	padding: 0px 0px 10px 0px;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	font-family: inherit;
+}
+
+
+/*-----------------------------------------------*/
+/* actions area */ 
+/*-----------------------------------------------*/
+.actions
+{
+	padding: 0px;
+	margin: 0px;
+	text-align: left;
+	width: 100%;
+	position: absolute;
+	background: #EFEFEF;
+	border-top: 1px solid #DEDEDE;
+	bottom: 0px;
+	left: 0px;
+	display: block;
+	overflow: hidden;
+	height: 55px;
+}
+
+.actions .column {
+	padding: 5px 0px;
+}
+
+.actions .btn.btn-danger {
+	position: absolute;
+	right: 50px;
+}
+
+/*************************************************/
+/* hide bar                                      */
+/*************************************************/
+.tickets_area .hidden .column
+{
+	width: 8px !important;
+}
+
+.tickets_area .hidden .column .content
+{
+	display: none;
+}
+
+.tickets_area .column #hide_bar
+{
+	width: 5px;
+	overflow:hidden;
+	cursor: pointer;
+	position: absolute;
+	right: -3px;
+	height: 100%;
+	z-index:1300;
+}
+
+.tickets_area .column #hide_bar:hover { background: silver; }
+
+.tickets_area .hidden .column #hide_bar
+{
+	width:8px;
+	right:0px;
+	z-index:1100;
+}
+
+/*************************************************/
+/* tickets                                       */
+/*************************************************/
+.tickets_area .column#tickets { width: 300px; }
+
+.tickets_area .column#tickets .content .ticket
+{
+	display: block;
+	border-bottom: 1px solid #DFDFDF;
+	clear: both;
+	cursor: pointer;
+	padding-right: 5px;
+	font-family:tahoma;
+	position: relative;
+	height: 110px;
+	overflow: hidden;
+	line-height: 14px;
+}
+
+.tickets_area .column#tickets .content .ticket div
+{
+	display: block;
+	position: absolute;
+}
+
+.tickets_area .column#tickets .content .ticket:hover
+{
+	background: #FFFFCC;
+	text-decoration: none;
+}
+
+.tickets_area .column#tickets .content .ticket.selected
+{
+	background: #FFEFDD;
+	background: #FFFF99;
+}
+
+ .tickets_area .column#tickets .content .note.ticket
+,.tickets_area .column#tickets .content .note.ticket:hover
+{
+	background: #99CCFF;
+	background: #CFCFCF;
+	color: white;
+	font-weight: bold;
+	border-bottom: 1px dotted silver;
+	padding: 2px 5px;
+	height: 15px;
+}
+
+.tickets_area .column#tickets .content .note.ticket #count
+{
+	float: right;
+	background: white;
+	color: #99CCFF;
+	color: silver;
+	border: 1px solid white;
+	border-width: 1px 0px;
+	display: block;
+	font-size: 9px;
+	padding: 2px 1px 2px 0px;
+	text-align: center;
+	width: 16px;
+	height: 10px;
+	overflow: hidden;
+	line-height: 11px;
+	font-weight: bold;
+	text-decoration: none !important;
+}
+
+.tickets_area .column#tickets .content .ticket
+{
+	color: inherit;
+	font-family: inherit;
+}
+
+.tickets_area .column#tickets .content .ticket_list
+{
+	display: none;
+	padding: 2px;
+}
+
+.tickets_area .column#tickets .content .ticket_list#tickets_mine
+{
+	display: block;
+}
+
+/*************************************************/
+/* ticket menu                                   */
+/*************************************************/
+.tickets_area .column#menus .button_area
+{
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.tickets_area .column#menus
+{
+	width: 190px;
+	background: #EFEFEF;
+}
+
+.tickets_area .column#menus .content
+{
+	color: gray;
+	text-transform: capitalize;
+}
+
+.tickets_area .column#menus .content .menu
+{
+	padding: 3px 5px 0px;
+}
+
+.tickets_area .column#menus .content .link
+{
+	cursor: pointer;
+	clear: both;
+	overflow: hidden;
+	height: 16px;
+	padding: 2px 0px;
+	position: relative;
+}
+
+ .tickets_area .column#menus .content .link #label
+,.tickets_area .column#menus .content .link #count
+{
+	float: left;
+	display: block;
+}
+
+.tickets_area .column#menus .content .link #label
+{
+	display: block;
+	line-height: 13pt;
+	margin-left: 17px;
+}
+
+.tickets_area .column#menus .content .link #count
+{
+	background: #DFDFDF;
+	color: white;
+	display: block;
+	font-size: 9px;
+	padding: 2px 1px 2px 0px;
+	text-align: center;
+	width: 16px;
+	height: 10px;
+	border: 1px solid #DFDFDF;
+	border-width: 1px 0px;
+	overflow: hidden;
+	line-height: 11px;
+	font-weight: bold;
+	text-decoration: none !important;
+	margin-left: 5px;
+}
+
+.tickets_area .column#menus .content .parent.link #label
+{
+	font-weight: bold;
+	margin-left: 3px;
+	color: #444444;
+}
+
+.tickets_area .column#menus .content .parent.link #count
+{
+	background: #99CCFF;
+	border-color: #99CCFF;
+	background: #FF6600;
+	border-color:#FF6600;
+}
+
+.tickets_area .column#menus .content .link:hover { background: #FFFFCC; }
+
+.tickets_area .column#menus .content .link.selected
+{
+	background: #FF6600;
+	background: #99CCFF;
+}
+
+.tickets_area .column#menus .content .link.selected #label 
+{ color:white; }
+
+.tickets_area .column#menus .content .link.selected #count
+{
+	color:silver;
+	background: white;
+	border-color: white;
+}
+
+
+
+
+
+
+
+
+/*************************************************/
+/* ticket menu                                   */
+/*************************************************/
+.sort_menu
+{
+	position: absolute;
+	background: white;
+	font-size: 10px;
+	z-index:2000;
+	border: 1px solid silver;
+	padding: 1px;
+	visibility: hidden;
+	display: inline-block;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+}
+
+.sort_menu #header
+{
+	height: auto;
+	color: white;
+	padding: 2px 3px;
+	background: #CFCFCF;
+	font-size: 12pt;
+	text-align: center;
+}
+
+.sort_menu #content { padding: 10px; }
+
+.sort_menu #content .item:hover
+{
+	background: #EFEFEF;
+}
+
+ .sort_menu .link.selected
+,.sort_menu .link.selected:hover
+{
+	background: dodgerblue;
+	box-shadow: 0px 0px 5px rgba(100,100,100,0.7);
+	color: white;
+}
+
+.sort_menu .link:hover {
+	background: white;
+}
+
+.sort_menu .link {
+	display: inline-block;
+	width: 55px;
+	overflow: hidden;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	padding: 20px 5px;
+	border: 1px solid #EFEFEF;
+	background: #EFEFEF;
+}
+
+.sort_menu .btn {
+	margin-top: 20px;
+}
+
+
+/*************************************************/
+/* ticket menu controls                          */
+/*************************************************/
+.tickets_area .column#menus .content .link #label.sort_menu_control
+{
+	text-transform: lowercase;
+	padding: 0px 3px;
+	opacity: .5;
+	line-height: 15px;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.tickets_area .column#menus .content .menu .groups
+{
+	display:none;
+	padding-bottom: 15px;
+}
+
+.tickets_area .column#menus .content .menu.group_expand .groups { display:block; }
+
+/*************************************************/
+/* credit area                                   */
+/*************************************************/
+ .tickets_area .column#menus .credit
+{
+	padding: 30px 5px 5px 10px;
+}
+
+ .tickets_area .column#menus .credit
+,.tickets_area .column#menus .credit a
+,.tickets_area .column#menus .credit a:visited
+{
+	text-transform: lowercase;
+	color: silver;
+}
+
+/*************************************************/
+/* status color                         */
+/*************************************************/
+/*
+.view_inline .status_acknowledged
+{
+	color: orangeRed;
+}
+
+.view_inline .status_assigned { color: orangeRed; }
+
+ .view_inline .status_closed
+,.view_inline .status_duplicate
+,.view_inline .status_ignore
+,.view_inline .status_monitor
+,.view_inline .status_reference
+{
+	color: gray;
+}
+
+.view_inline .status_development { color: Crimson; }
+.view_inline .status_done { color: green; }
+.view_inline .status_fail { color:red; }
+.view_inline .status_new { color: orangeRed;}
+
+.view_inline .status_pending_closure
+{
+	color: green;
+	font-weight: bold;
+}
+
+.view_inline .status_pending_data { color: DeepSkyBlue; }
+.view_inline .status_pending_feedback { color: RoyalBlue; }
+.view_inline .status_pending_review { color: blue; }
+.view_inline .status_passed #col_status { background: #33AA00; }
+.view_inline .status_research { color: Crimson; }
+.view_inline .status_schedule_release { color: green; }
+.view_inline .status_test { color: purple; }
+*/
+
+/*************************************************/
+/* loading animation                             */
+/*************************************************/
+div.loading-mask
+{
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,.7);
+	z-index: 2000;
+	position: absolute;
+	top:0px;
+	left:0px;
+	visibility: hidden;
+}
+
+div.loading-badge
+{
+	width: 60px;
+	background: #FF6600;
+	color: white;
+	padding: 3px 10px;
+	border: 1px dotted white;
+	text-align: center;
+	text-decoration: blink;
+	z-index: 2000;
+	font-weight: bold;
+	font-size: 11px;
+	top: 0px;
+	margin: 5px;
+	position: absolute;
+}
+
+
+#menus .loading-mask {
+	visibility: visible;
+}
+
+
+/*************************************************/
+/* data order                                    */
+/*************************************************/
+#col_client, #col_date, #col_severity { right: 5px; }
+
+ #col_ticket
+,#col_reporter
+,#col_title
+,#col_bugnote, #col_status
+{
+	left: 5px;
+}
+
+#col_ticket, #col_client { top: 4px; }
+#col_client { opacity: 0.5; }
+#col_date, #col_reporter
+{
+	top: 20px;
+	font-weight: bold;
+}
+
+#col_severity, #col_view { top: 27pt; }
+#col_title
+{
+	top: 53px;
+	overflow: hidden;
+	opacity: .5;
+	font-size: 11px;
+}
+
+#col_title br { display: none; }
+#col_bugnote
+{
+	top: 68px;
+	opacity: .5;
+}
+
+#col_bugnote br { display: none; }
+#col_view  { right: 68px; }
+#col_owner, #col_type { display: none; }
+#col_status
+{
+	top: 36px;
+	font-size: 11px;
+	padding: 0px 4px;
+	border: 1px dotted gray;
+}
+
+/**
+ * column status
+ **/
+/*
+#tickets_column .ticket #col_status
+{
+	top: 30%;
+	left: -46%;
+	text-align: center;
+	line-height: 25pt;
+	transform: rotate(-90deg);
+	width: 100%;
+}
+
+ #tickets_column .ticket #col_title
+,#tickets_column .ticket #col_reporter
+,#tickets_column .ticket #col_ticket 
+{
+	left: 40px;
+}
+
+#tickets_column .ticket #col_title
+{
+	top: 35px
+}
+*/
+
+
+
+/*************************************************/
+/* inline list order                             */
+/*************************************************/
+.tickets_area.view_inline #tickets_column
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+.tickets_area.view_inline #tickets_column.hidden {
+	width: initial;
+}
+
+.tickets_area.view_inline #tickets_column #tickets.column .note.ticket #count
+{
+    float:left;
+    background: #ECECEC;
+    margin-right: 5px;
+    color: gray;
+}
+
+ .tickets_area.view_inline #tickets_column #tickets.column .note.ticket
+,.tickets_area.view_inline #tickets_column .tickets_area #tickets.column .content .note.ticket:hover
+{
+    background: none;
+    color:black;
+    padding-top: 15px;
+}
+
+.tickets_area.view_inline #tickets_column #tickets.column { width: 100%; }
+
+.tickets_area.view_inline #tickets_column #tickets.column .ticket
+{
+    overflow:hidden;
+    display:block;
+    height: 20px;
+    overflow: hidden;
+    padding: 0px 10px 0px 25px;
+    line-height: 20px
+}
+
+.tickets_area.view_inline #tickets_column #tickets.column .ticket div
+{
+    display: inline;
+    position:relative;
+    top:auto;
+    left:auto;
+    right:auto;
+    bottom:auto;
+}
+
+ .tickets_area.view_inline #tickets_column #tickets.column #col_date
+,.tickets_area.view_inline #tickets_column #tickets.column #col_ticket
+,.tickets_area.view_inline #tickets_column #tickets.column #col_client
+,.tickets_area.view_inline #tickets_column #tickets.column #col_status
+,.tickets_area.view_inline #tickets_column #tickets.column #col_reporter
+,.tickets_area.view_inline #tickets_column #tickets.column #col_title
+{
+    display: inline;
+    position: relative;
+    margin-right: 10px;
+}
+
+.tickets_area.view_inline #tickets_column #tickets.column #col_date
+{
+    float: right;
+    margin-right: 0px;
+    margin-left: 15px;
+}
+
+.group_expand .icons.icon-chevron-right { background-position: -313px -119px; }
+.group_expand .icons.icon-plus { background-position: -433px -96px; }
+
+
+
+.tickets_area.view_inline #frame {
+	width: 0px;
+}
+
+
+
+
+

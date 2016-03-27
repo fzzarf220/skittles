@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+
+  <head>
+    <script data-require="jquery@*" data-semver="2.1.1" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <link rel="stylesheet" href="skittles.css" />
+    <script type='text/javascript' src='skittles.js'></script>
+  </head>
+
+  <body ng-controller='controller'>
+		<table class='tickets_area' id='tickets_area'>
+			<tr>
+				<td colspan='3' class='header'>
+			  	<span id='title'>{{title}}</span>
+					<div id='search'>
+						<input tyle='text' placeholder='ticket...' />
+						<button class='btn btn-info'>Search</button>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td ng-class='{"hidden": !panel.menus}'>
+					<!-- sort menu -->
+					<div class='sort_menu' ng-show='isGroupMenuVisible()'>
+						<div id='header'>Menu</div>
+						<div id='content'>
+							<b>Group By:</b><br /><br />
+							<div class='link' ng-repeat='(key,label) in group.options' ng-class='{"selected":group.by==key}' ng-click='group.setGroup(key); toggleGroupMenu(true)'>{{label}}</div>
+							<br \>
+							<center>
+								<button ng-click='toggleGroupMenu(true)' 
+									class='btn btn-warning'>Cancel</button>
+							</center>
+						</div>
+					</div>
+
+					<!-- ticket menu -->
+					<div class='column' id='menus'>
+						<div class='content'>
+							<div class='button_area'>
+								<button ng-click='newTicket()'
+								class='btn btn-warning' 
+								id='button_open_ticket' 
+								>Open Ticket</button>
+							</div>
+							<div class='menu_area'>
+
+								<ul>
+									<li ng-repeat='set in sets'>
+										<a href='#'>{{group.options[group.by]}}</a>
+										<ul>
+											<li
+												class='link'
+												ng-click='selectGroup(group); selected.group=group; selected.set=group.by;'
+												ng-if='row.indices.length > 0'
+												ng-class='{"selected": selected.group==group}'
+												ng-repeat='(group,row) in groups'>
+													<a href='#'>{{row.label}}&nbsp;<span id='count'>{{row.indices.length}}</span></a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+
+
+								<!-- set -->
+								<div ng-init='link.parent=false; link.child=false;'>
+									<!-- group -->
+									<div class='parent link' 
+										ng-click='showTicketList(group); selected.set=group.by'
+										ng-class='{"selected":selected.set==group.by}'>
+											<i class='icons icon-chevron-right' 
+												style='float:left; cursor:pointer;' 
+												title='click to expand/collapse'>&nbsp;</i>&nbsp;
+											<span id='label'>{{group.options[group.by]}}</span>
+											<span id='count' class='count'>{{tickets.length}}</span>
+											<span id='label' 
+												class='sort_menu_control' 
+												ng-click='showGroupMenu($event);'>
+													<i class='icons icon-caret'></i>
+											</span>
+									</div>
+
+									<!-- groups -->
+									<div class='link' 
+										ng-if='row.indices.length > 0'
+										ng-repeat='(group,row) in groups'
+										ng-click='selectGroup(group); selected.group=group; selected.set=group.by;'
+										ng-class='{"selected": selected.group==group}'>
+											<span id='label'>{{row.label}}</span>
+											<span id='count'>{{row.indices.length}}</span>
+									</div>
+								</div>
+							</div>
+							<div class='credit'>
+								Webtriqs, Inc. &copy; 2014<br>
+								v3.0.5 (skittles)<br>
+								<a href='#' ng-click="setViewVertical()">
+									<i style='opacity: .2;' class='icons icon-th-list'></i>&nbsp;vertical</a>
+								&nbsp;&nbsp;
+								<a href='#' ng-click='setViewInline()'>
+									<i style='opacity: .2;' class='icons icon-align-justify'></i>&nbsp;inline</a>
+							</div>
+							<div class='loading-mask'>
+								<div class='loading-badge' id='loadingbookmark_list_message'>Loading...</div>
+							</div>
+						</div>
+						<div id='hide_bar' ng-click='togglePanel("menus")'>&nbsp;</div>
+					</div>
+				</td>
+				
+				<!-- ticket list -->
+				<td id='tickets_column' ng-class='{"hidden": !panel.tickets}'>
+					<div class='column' id='tickets'>
+						<div class='content'>
+							<!-- group -->
+							<div 
+								ng-if='row.indices.length > 0' 
+								ng-class='group' 
+								ng-repeat='(group,row) in groups'>
+									<div class='note ticket'>
+										{{row.label}}<span id='count' class='count'>{{row.indices.length}}</span>
+									</div>
+
+									<!-- ticket -->
+									<div
+										class='ticket {{ticket.status}} {{group}}' 
+										ng-class='{"selected":selected.ticket==ticket.number && selected.group==group}'
+										ng-repeat='index in row.indices' 
+										ng-init='ticket=tickets[index]'
+										ng-click='selectTicket(ticket.number); selected.group=group; selected.ticket=ticket.number;'>
+											<div id='col_date' title='date created'>{{ticket.date}}</div>
+											<div id='col_ticket'>{{ticket.number}}</div>
+											<div id='col_status'>{{getStatus(ticket.status)}}</div>
+											<div id='col_client'>{{ticket.client}}</div>
+											<div id='col_reporter'>{{ticket.reporter}}</div>
+											<div id='col_title'><b>{{ticket.title}}</b> {{ticket.summary}}</div>
+									</div>
+							</div>
+						</div>
+						<div id='hide_bar'  ng-click='togglePanelTickets()'>&nbsp;</div>
+					</div>
+				</td>
+
+				<!-- ticket -->
+				<td id='frame' ng-show='panel.ticket'>
+					<div class='loading-mask'>
+						<div class='loading-badge' id='loading_ticket_message'>Loading...</div>
+					</div>
+
+					<!-- ticket -->
+					<div class='ticket' ng-show='ticket'>
+						<div class="info_top">
+							<div class='info'>
+								<div id='info_left'><label><span class='follow'>bookmark</span></label></div>
+								<div id='info_right'></div>
+							</div>
+							<div class='info'>
+								<div id='info_left'><label>Ticket #</label><div id='value'>{{ticket.id}}</div></div>
+								<div id='info_right'><label>Client</label><div id='value'>{{ticket.client}}</div></div>
+							</div>
+							<div class='info'>
+								<div id='info_left'><label>Related Tickets</label><div id='value'>{{ticket.related}}</div></div>
+								<div id='info_right'><label>Date Occurred</label>
+									<div id='value'><input type='text' ng-model='ticket.dateCreated' /></div>
+								</div>
+							</div>
+							<div class='info'>
+								<div id='info_left'><label>Reporter</label><div id='value'>{{ticket.reporterId}}</div></div>
+								<div id='info_right'><label>Severity</label><div id='value'>
+									<select>
+										<option>High</option>
+										<option>Medium</option>
+										<option>Low</option>
+									</select>
+								</div></div>
+							</div>
+							<div class='info'>
+								<div id='info_left'><label>Handler</label><div id='value'>{{ticket.handlerId}}</div></div>
+								<div id='info_right'><label>View</label>
+									<div id='value'>
+										<select>
+											<option>Public</option>
+											<option>Private</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class='info'>
+								<div id='info_left'>
+									<label>Status</label>
+									<div id='value'>
+										<span ng-class='ticket.status'>
+											<span id='col_status'>{{getStatus(ticket.status)}}</span>
+										</span>
+									</div>
+								</div>
+								<div id='info_right'><label></label><div id='value'></div></div>
+							</div>
+						</div>
+
+						<!-- ticket info -->
+						<div class="data">
+							<h3>Summary</h3>
+							<div class='summary'>
+								<pre>{{ticket.summary}}</pre>
+								<br />
+							</div>
+							<h3>Bugnote(s)</h3>
+							<div class='bugnote' ng-repeat='bugnote in ticket.bugnotes'>
+								<span id='user'>{{bugnote.user}}</span>
+								<span id='date'>{{bugnote.date.created}}</span>
+								<span id='date_update'>{{bugnote.date.updated}}</span>
+								<span id='view'>{{bugnote.view}} view</span>
+								<span id='hours'>{{bugnote.hours}} hour(s)</span>
+								<pre ng-if='bugnote.status' id='note'><span ng-class='bugnote.status'>set status to <span id='col_status'>{{getStatus(bugnote.status)}}</span></span></pre>
+								<pre ng-if='bugnote.note' id='note'>{{bugnote.note}}</pre>
+							</div>
+							
+							<div class='bugnote'><span id='hours'>{{ticket.totalHours}} hour(s) total</span></div>
+							<br />
+							<h3>Add a Bugnote</h3>
+							<textarea placeholder='Enter a bugnote here...'></textarea>
+						</div>
+					</div>
+
+					<!-- buttons -->
+					<div class='actions' ng-show='ticket'>
+						<div class='data'>
+							<button class='btn btn-warning'>Add Comment</button>
+							<button class='btn btn-success'>Update Ticket</button>
+							<button class='btn btn-danger'>Close Ticket</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+  </body>
+
+</html>
